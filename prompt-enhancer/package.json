@@ -1,0 +1,45 @@
+{
+  "name": "prompt-composer",
+  "version": "0.2.3",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @prompt-composer/extension dev",
+    "build": "pnpm --filter @prompt-composer/extension build",
+    "zip": "pnpm --filter @prompt-composer/extension zip",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "pnpm --workspace-concurrency=1 -r --if-present typecheck",
+    "test": "vitest run apps packages --passWithNoTests --pool=threads --maxWorkers=1",
+    "test:unit": "vitest run apps packages --passWithNoTests --pool=threads --maxWorkers=1",
+    "test:e2e": "pnpm build && playwright test",
+    "fixture": "node scripts/fixture-server.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@playwright/test": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "jsdom": "latest",
+    "prettier": "latest",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "latest",
+    "vitest": "latest"
+  },
+  "pnpm": {
+    "overrides": {
+      "define-lazy-prop": "2.0.0",
+      "entities": "7.0.1",
+      "is-wsl": "2.2.0"
+    }
+  }
+}

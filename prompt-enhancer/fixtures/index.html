@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prompt Composer editor fixture</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        font-family: system-ui, sans-serif;
+      }
+      body {
+        margin: 0;
+        background: #f5f7fb;
+        color: #172033;
+      }
+      body.dark {
+        background: #151821;
+        color: #eef2ff;
+      }
+      main {
+        width: min(760px, calc(100% - 32px));
+        margin: auto;
+        padding: 48px 0 600px;
+      }
+      section {
+        display: grid;
+        gap: 10px;
+        margin: 28px 0;
+      }
+      textarea,
+      input,
+      [contenteditable],
+      [role='textbox'] {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: 48px;
+        border: 1px solid #8290ad;
+        border-radius: 10px;
+        padding: 12px;
+        background: white;
+        color: #172033;
+      }
+      [contenteditable],
+      [role='textbox'] {
+        min-height: 100px;
+      }
+      button {
+        width: fit-content;
+        padding: 8px 12px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Prompt Composer local editor fixture</h1>
+      <button id="theme" type="button">Toggle dark theme</button>
+      <section>
+        <label for="standard">Standard textarea</label><textarea id="standard"></textarea>
+      </section>
+      <section>
+        <label for="ordinary">Ordinary input (ignored)</label><input id="ordinary" type="text" />
+      </section>
+      <section>
+        <span>Contenteditable</span>
+        <div id="contenteditable" contenteditable="true" role="textbox"></div>
+      </section>
+      <section>
+        <span>Role textbox</span>
+        <div id="role-textbox" role="textbox" tabindex="0"></div>
+      </section>
+      <textarea class="hidden" aria-label="Hidden editor"></textarea>
+      <textarea disabled aria-label="Disabled editor"></textarea>
+      <input type="password" value="never inspect this" />
+      <input type="search" placeholder="Search" />
+      <section id="dynamic-slot"><span>Dynamic editor appears after two seconds</span></section>
+      <section>
+        <label for="replaceable">Replaceable editor</label><textarea id="replaceable"></textarea
+        ><button id="recreate" type="button">Remove and recreate</button>
+      </section>
+      <section>
+        <label for="controlled">Controlled editor</label><textarea id="controlled"></textarea
+        ><output id="controlled-state"></output>
+      </section>
+      <button id="report" type="button">Report focused editor value</button>
+      <output id="report-value" aria-live="polite"></output>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet,
+        consectetur adipiscing elit.
+      </p>
+    </main>
+    <script>
+      const controlled = document.querySelector('#controlled');
+      const controlledState = document.querySelector('#controlled-state');
+      controlled.addEventListener('input', () => {
+        controlledState.value = controlled.value;
+        controlledState.textContent = controlled.value;
+      });
+      document
+        .querySelector('#theme')
+        .addEventListener('click', () => document.body.classList.toggle('dark'));
+      document.querySelector('#recreate').addEventListener('click', () => {
+        const previous = document.querySelector('#replaceable');
+        const replacement = document.createElement('textarea');
+        replacement.id = 'replaceable';
+        replacement.setAttribute('aria-label', 'Recreated editor');
+        previous.replaceWith(replacement);
+      });
+      document.querySelector('#report').addEventListener('click', () => {
+        const active = document.activeElement;
+        const value = active?.value ?? active?.textContent ?? '';
+        document.querySelector('#report-value').textContent = value;
+      });
+      setTimeout(() => {
+        const textarea = document.createElement('textarea');
+        textarea.id = 'dynamic';
+        textarea.setAttribute('aria-label', 'Dynamic editor');
+        document.querySelector('#dynamic-slot').append(textarea);
+      }, 2000);
+    </script>
+  </body>
+</html>

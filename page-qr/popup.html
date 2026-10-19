@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page QR</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="popup">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">QR</div>
+      <div>
+        <h1>Page QR</h1>
+        <p class="subtitle">Share this page in a scan</p>
+      </div>
+    </header>
+
+    <section class="preview-card" aria-label="QR code preview">
+      <div id="loading" class="state" role="status">
+        <span class="spinner" aria-hidden="true"></span>
+        <span>Creating your QR code…</span>
+      </div>
+      <div id="error" class="state error-state" role="alert" hidden></div>
+      <canvas id="qr-canvas" aria-label="QR code for the current page" hidden></canvas>
+    </section>
+
+    <section class="page-info" aria-label="Current page">
+      <span class="eyebrow">CURRENT PAGE</span>
+      <p id="page-url" class="page-url">Getting page address…</p>
+    </section>
+
+    <div class="actions" aria-label="QR code actions">
+      <button id="download-button" class="button button-primary" type="button" disabled>
+        <span aria-hidden="true">↓</span> Download PNG
+      </button>
+      <button id="copy-button" class="button button-secondary" type="button" disabled>
+        <span aria-hidden="true">▢</span> Copy image
+      </button>
+      <button id="share-button" class="button button-secondary" type="button" hidden disabled>
+        <span aria-hidden="true">↗</span> Share
+      </button>
+    </div>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="vendor/qrcode.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

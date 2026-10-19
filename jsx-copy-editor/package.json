@@ -1,0 +1,62 @@
+{
+  "name": "jsx-copy-editor",
+  "displayName": "JSX Copy Editor",
+  "description": "Edit static JSX/TSX copy by file and source line. By Brownsmith Dynamics — https://brownsmithdynamics.com",
+  "version": "1.0.1",
+  "publisher": "brownsmith-dynamics",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:copyEditor.open"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "copyEditor.open",
+        "title": "Copy Editor: Open"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsc && node build.cjs",
+    "test": "npm run build && node --test test/*.test.cjs",
+    "package": "npm run build && vsce package --no-dependencies --allow-missing-repository --skip-license",
+    "vscode:prepublish": "npm run build"
+  },
+  "dependencies": {
+    "typescript": "5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.25.0"
+  },
+  "author": {
+    "name": "Brownsmith Dynamics",
+    "url": "https://brownsmithdynamics.com",
+    "email": "contact@brownsmithdynamics.com"
+  },
+  "homepage": "https://brownsmithdynamics.com",
+  "bugs": {
+    "email": "contact@brownsmithdynamics.com"
+  },
+  "icon": "assets/icon.png",
+  "galleryBanner": {
+    "color": "#1b2028",
+    "theme": "dark"
+  },
+  "keywords": [
+    "jsx",
+    "tsx",
+    "copy",
+    "text",
+    "react",
+    "nextjs"
+  ]
+}

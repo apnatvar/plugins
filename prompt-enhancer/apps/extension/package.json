@@ -1,0 +1,31 @@
+{
+  "name": "@prompt-composer/extension",
+  "version": "0.2.3",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "node scripts/zip-store.mjs",
+    "postinstall": "wxt prepare",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prompt-composer/extension-storage": "workspace:*",
+    "@prompt-composer/editor-adapters": "workspace:*",
+    "@prompt-composer/prompt-core": "workspace:*",
+    "@prompt-composer/shared-types": "workspace:*",
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@types/chrome": "latest",
+    "@tailwindcss/vite": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@wxt-dev/module-react": "latest",
+    "tailwindcss": "latest",
+    "typescript": "^5.9.3",
+    "wxt": "latest"
+  }
+}

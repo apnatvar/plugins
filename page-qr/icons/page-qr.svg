@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Page QR by Brownsmith Dynamics</title>
+  <rect width="512" height="512" rx="104" fill="#103F43"/>
+  <rect x="35" y="35" width="442" height="442" rx="76" fill="#F7F3E8"/>
+
+  <!-- Three familiar QR finder marks; the surrounding modules are decorative. -->
+  <g fill="#103F43">
+    <path fill-rule="evenodd" d="M76 76h112v112H76zm30 30v52h52v-52z"/>
+    <path fill-rule="evenodd" d="M324 76h112v112H324zm30 30v52h52v-52z"/>
+    <path fill-rule="evenodd" d="M76 324h112v112H76zm30 30v52h52v-52z"/>
+
+    <!-- Independent square modules create a QR-like rhythm without encoding data. -->
+    <path d="M218 76h30v30h-30zm60 0h30v60h-30zm-60 60h30v30h-30zm30 30h30v30h-30zm60 0h30v30h-30zm68 60h30v30h-30zm-248 0h30v30h-30zm60 0h60v30h-60zm90 30h30v30h-30zm60 0h30v60h-30zm60 0h30v30h-30zM76 218h30v30H76zm60 0h30v60h-30zm60 0h30v30h-30zm60 30h30v30h-30zm-180 30h60v30h-60zm90 0h30v30h-30zm60 30h30v30h-30zm60 0h30v30h-30zm90-30h30v30h-30zm-90 90h30v30h-30zm60 0h30v30h-30zm30 30h30v30h-30zm-120 30h30v30h-30z"/>
+  </g>
+
+  <!-- Publisher monogram in the clear lower-right finder position. -->
+  <rect x="324" y="324" width="112" height="112" rx="25" fill="#D96E4B"/>
+  <text x="380" y="393" fill="#103F43" font-family="Arial, Helvetica, sans-serif" font-size="37" font-weight="800" text-anchor="middle" letter-spacing="-2">[BD]</text>
+</svg>

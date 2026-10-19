@@ -1,0 +1,19 @@
+{
+  "name": "@prompt-composer/prompt-core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@prompt-composer/shared-types": "workspace:*",
+    "yaml": "latest"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,26 @@
+Page QR by Brownsmith Dynamics creates a QR code for the HTTP or HTTPS page open in your active Chrome tab. Click the extension icon to see the page address and a QR preview. Download the image as a PNG, copy the image to your clipboard when supported, or use the native file-sharing option when your browser offers it. Each QR image includes a small [BD] Brownsmith Dynamics footer beneath the code.
+
+The code encodes the complete URL Chrome makes available, including the subdomain, path, query parameters, and fragment. A page such as https://portal.example.com/catalog/item?source=event#details remains that full address in the QR. Page QR does not shorten, rewrite, or redirect the link. Check the displayed URL before sharing: a query string or fragment can contain information you consider private, and anyone who scans the image can read the address.
+
+Use Page QR to move a link from one screen to another, include a web address in a document, or give someone a scannable route to a page. For example, open the page on a laptop, show or save its QR, and scan it with a phone. The recipient reaches the URL through their own browser. The destination must still be online, and recipients still need any required account, network, or permission. A QR code does not make a private page public or transfer your browsing session, cookies, or sign-in state.
+
+To create a code, open the intended website in Chrome and click Page QR. Review the current-page address shown in the popup. When the preview appears, choose Download PNG to save page-qr.png, or Copy image to paste the PNG into an application that supports clipboard images. If Share appears, select it to open the browser or operating system's native file-sharing interface. That action provides the PNG and full URL as share text to the interface, where you choose a destination. Sharing availability depends on browser support.
+
+Generation takes place locally in the popup using the QR encoder packaged with the extension. Page QR uses Chrome's activeTab permission to read the active tab's URL after you invoke it. It does not request access to every site or tab, inject a content script, use extension storage or a background worker, or make network requests for its QR feature. It has no backend, analytics, or telemetry. The publisher does not receive your page URL or QR image. The address and image are held in popup memory while it is open and discarded when it closes.
+
+When you download, the PNG is saved through Chrome's normal download behavior. When you copy, the PNG is placed on the clipboard if image writing is supported. A downloaded file or clipboard entry may remain according to your device and other applications. If you choose Share, the browser or operating system and the destination you select handle the data under their own privacy practices. Page QR does not control those services or retain copies of images you use outside the popup.
+
+Page QR supports HTTP and HTTPS pages. Browser-internal pages, extension pages, local file addresses, and other non-web protocols are unsupported. If the active tab's address is unavailable, the popup reports an error. Very long URLs may exceed QR capacity; in that case the extension reports an error and does not silently remove URL content or create a shortened link. If a shorter address is appropriate, use a link supplied by the website and inspect it before encoding.
+
+A code's scan quality depends on its size, contrast, display, printing, camera, and scanner. The PNG includes a four-module white quiet zone around the square QR and keeps the [BD] footer below that area. When placing the image in a document, keep the code clear and test the version people will scan. If the URL contains a fragment, the browser may retain it in the address bar while the website decides how to use it.
+
+Page QR is a focused way to create, preview, download, copy, and, where supported, share a QR image for the current page. It does not validate the destination, guarantee that it remains available, count scans, track recipients, or promise a particular outcome. Review the address and sharing context before distributing the image.
+
+Publisher: Brownsmith Dynamics
+Publisher website: https://brownsmithdynamics.com
+Plugins: https://plugins.brownsmithdynamics.com/
+Product page and documentation: https://plugins.brownsmithdynamics.com/page-qr/
+Privacy: https://plugins.brownsmithdynamics.com/page-qr/privacy/
+Support: https://plugins.brownsmithdynamics.com/support/
+
+The product, privacy, documentation, and support addresses above are reference URLs; their live availability has not been verified here.

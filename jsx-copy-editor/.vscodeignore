@@ -1,0 +1,12 @@
+node_modules/**
+.npm-cache/**
+src/**
+out/**
+test/**
+.vscode/**
+docs/**
+assets/*.svg
+tsconfig.json
+build.cjs
+package-lock.json
+**/*.vsix
