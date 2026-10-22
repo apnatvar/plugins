@@ -15,6 +15,7 @@ The projects now live together in this single Git repository. Each tool has its 
 | Tool | Platform | What it does | Source and setup |
 | --- | --- | --- | --- |
 | Page QR | Chrome | Turns the current page URL into a QR code that you can scan, download, or copy. | [page-qr](page-qr/README.md) |
+| PPDF · Privacy PDF by [BD] | Chrome | Compresses JPEG images inside PDFs and merges, splits, organises, numbers, and creates PDFs entirely offline. | [ppdf](ppdf/README.md) |
 | Prompt Composer | Chrome | Helps review, format, and reuse prompts in compatible web editors, with previews and local snippets. | [prompt-enhancer](prompt-enhancer/README.md) |
 | JSX Copy Editor | VS Code | Edits literal JSX and TSX copy in a panel grouped by source file, with source line labels. | [jsx-copy-editor](jsx-copy-editor/README.md) |
 
@@ -32,6 +33,7 @@ cd plugins
 Then open the directory for the tool you want to use or change:
 
 - **Page QR:** load `page-qr/` as an unpacked Chrome extension. No build step is required.
+- **PPDF:** open `ppdf/`, run `npm ci` and `npm run build`, then load `ppdf/dist/` as an unpacked Chrome extension.
 - **Prompt Composer:** open `prompt-enhancer/` and follow its Node.js and pnpm setup instructions.
 - **JSX Copy Editor:** open `jsx-copy-editor/` and follow its npm build and VS Code development instructions.
 

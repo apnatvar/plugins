@@ -1,0 +1,14 @@
+{
+  "name": "ppdf", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": {
+    "dev": "vite", "check": "tsc --noEmit", "build": "npm run check && vite build && node scripts/prepare.mjs && node scripts/validate-build.mjs",
+    "test": "tsx --test tests/*.test.ts && node scripts/browser-test.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-slot": "1.2.3", "class-variance-authority": "0.7.1", "clsx": "2.1.1", "lucide-react": "0.468.0", "pdf-lib": "1.17.1", "pdfjs-dist": "5.4.624", "react": "19.2.0", "react-dom": "19.2.0", "tailwind-merge": "3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.1.18", "@types/chrome": "0.1.32", "@types/node": "22.19.7", "@types/react": "19.2.7", "@types/react-dom": "19.2.3", "@vitejs/plugin-react": "4.7.0", "fflate": "0.8.2", "playwright": "1.58.2", "tailwindcss": "4.1.18", "tsx": "4.21.0", "typescript": "5.9.3", "vite": "6.4.1"
+  }
+}
