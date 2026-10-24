@@ -26,5 +26,5 @@
   },
   "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
   "keywords": ["invoice", "validation", "gstin", "gst", "decimal", "offline", "typescript"],
-  "devDependencies": { "typescript": "5.9.3" }
+  "devDependencies": { "typescript": "7.0.2" }
 }
