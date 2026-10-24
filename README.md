@@ -18,6 +18,9 @@ The projects now live together in this single Git repository. Each tool has its 
 | PPDF · Privacy PDF by [BD] | Chrome | Compresses JPEG images inside PDFs and merges, splits, organises, numbers, and creates PDFs entirely offline. | [ppdf](ppdf/README.md) |
 | Prompt Composer | Chrome | Helps review, format, and reuse prompts in compatible web editors, with previews and local snippets. | [prompt-enhancer](prompt-enhancer/README.md) |
 | JSX Copy Editor | VS Code | Edits literal JSX and TSX copy in a panel grouped by source file, with source line labels. | [jsx-copy-editor](jsx-copy-editor/README.md) |
+| Sitemap Diff (draft) | Node.js library · CLI | Parses and compares XML sitemaps for added, removed, changed, and duplicate URLs. | [sitemap-diff](sitemap-diff/README.md) |
+| CSV Schema Mapper | JavaScript / TypeScript | Maps CSV headers and values into typed records using a declared schema, aliases, and validation results. | [csv-schema-mapper](csv-schema-mapper/) · npm publication pending |
+| Business Hours Engine | TypeScript library | Calculates operating hours across IANA time zones, DST, overnight shifts and date overrides. | [business-hours](business-hours/README.md) · npm publication pending |
 
 Prompt Composer's source directory is named `prompt-enhancer`. Visit the [plugins hub](https://plugins.brownsmithdynamics.com) for product information and availability, and follow each tool's README for local installation or development.
 
@@ -36,6 +39,7 @@ Then open the directory for the tool you want to use or change:
 - **PPDF:** open `ppdf/`, run `npm ci` and `npm run build`, then load `ppdf/dist/` as an unpacked Chrome extension.
 - **Prompt Composer:** open `prompt-enhancer/` and follow its Node.js and pnpm setup instructions.
 - **JSX Copy Editor:** open `jsx-copy-editor/` and follow its npm build and VS Code development instructions.
+- **Sitemap Diff:** open `sitemap-diff/`; it is an unreleased ESM-only Node.js 22+ library and CLI draft. See its README for current status.
 
 There is no shared root install or build command. Dependencies, build outputs, checks, and packaging are managed within each project.
 

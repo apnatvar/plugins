@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <title>PPDF by Brownsmith Dynamics</title>
+  <desc>A document page with a bold P inside a teal rounded square.</desc>
+  <rect x="64" y="64" width="384" height="384" rx="88" fill="oklch(.45 .12 210)"/>
+  <path d="M160 126h136l56 56v204H160z" fill="white"/>
+  <path d="M296 126v56h56" fill="oklch(.91 .035 207)"/>
+  <path d="M206 211h72c43 0 66 21 66 59s-23 59-66 59h-27v39h-45V211Zm45 39v40h25c15 0 23-7 23-20s-8-20-23-20h-25Z" fill="oklch(.45 .12 210)" fill-rule="evenodd"/>
+</svg>

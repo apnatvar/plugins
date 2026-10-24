@@ -1,0 +1,65 @@
+{
+  "release_version": "1.0.0",
+  "language": "English",
+  "category": "Productivity",
+  "publisher": "Brownsmith Dynamics",
+  "single_purpose": "Provide local PDF compression and page-management tools, plus JPG/PNG-to-PDF conversion, within Chrome.",
+  "minimum_chrome_version": "120",
+  "store_copy": {
+    "summary_file": "summary.txt",
+    "description_file": "description.txt",
+    "description_character_limit": 16000
+  },
+  "permissions": {
+    "requested": [],
+    "optional": [],
+    "host_permissions": [],
+    "justifications": {}
+  },
+  "remote_code": {
+    "uses_remote_code": false,
+    "declaration": "No remote executable code is used. The PDF.js worker, processing worker, and PDF.js WebAssembly assets are bundled locally in the extension package."
+  },
+  "privacy_dashboard_disclosure": {
+    "developer_or_third_party_collection": "None.",
+    "locally_processed_data": [
+      {
+        "data": "PDF files selected by the user, including their document contents and file metadata",
+        "purpose": "Preview, compress, merge, split, extract, delete, reorder, rotate, or number PDF pages",
+        "storage": "Held in extension memory while loaded in the workspace and released when cleared or the workspace closes; no extension-side persistent storage is used",
+        "transmission": "Not transmitted"
+      },
+      {
+        "data": "JPG and PNG files selected by the user, including image contents and file metadata",
+        "purpose": "Create a PDF with one image per page",
+        "storage": "Held in extension memory while loaded in the workspace and released when cleared or the workspace closes; no extension-side persistent storage is used",
+        "transmission": "Not transmitted"
+      },
+      {
+        "data": "Generated PDF output",
+        "purpose": "Return the result for user-directed download",
+        "storage": "Held in workspace memory until replaced, cleared, or the workspace closes; downloading does not itself clear the workspace.",
+        "transmission": "Not transmitted by the extension"
+      }
+    ],
+    "external_recipients": [],
+    "analytics_or_account_data": "None collected by the extension.",
+    "user_directed_exports": "The extension creates a browser download only after the user chooses Save.",
+    "dashboard_collection_answer": "PPDF handles user-selected PDFs, JPGs, and PNGs locally to perform its stated features. It does not collect or transmit the documents, their metadata, or operation telemetry. A publisher link opens its selected website in the browser; any request data handled by that website is separate from extension processing."
+  },
+  "artwork": {
+    "required_screenshots": 2,
+    "screenshot_status": "Two actual 1280x800 screenshots reviewed; generated example document, real processing results, no API shim.",
+    "logo_status": "128x128 transparent PNG reviewed; matches bundled runtime icon.",
+    "small_promo_status": "440x280 PNG reviewed; editable SVG included."
+  },
+  "readiness": {
+    "status": "draft_assets_complete_runtime_verified",
+    "blockers": [
+      "Before Store submission, remove the editorial draft label from the public privacy page and finalize the dashboard listing."
+    ],
+    "submission_authorized": false,
+    "full_regression_suite": "Not rerun: no commit requested; scoped exact-ZIP release verification completed."
+  },
+  "source_repository": "https://github.com/apnatvar/plugins"
+}

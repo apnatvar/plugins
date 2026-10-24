@@ -1,0 +1,92 @@
+{
+  "name": "@brownsmithdynamics/sitemap-diff",
+  "version": "0.1.0",
+  "description": "Bounded XML sitemap comparison for technical SEO monitoring by Brownsmith Dynamics",
+  "type": "module",
+  "license": "MIT",
+  "author": "Brownsmith Dynamics <contact@brownsmithdynamics.com> (https://brownsmithdynamics.com)",
+  "homepage": "https://plugins.brownsmithdynamics.com/sitemap-diff/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apnatvar/plugins.git",
+    "directory": "sitemap-diff"
+  },
+  "bugs": {
+    "url": "https://github.com/apnatvar/plugins/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./parse": {
+      "types": "./dist/parse.d.ts",
+      "import": "./dist/parse.js"
+    },
+    "./normalize": {
+      "types": "./dist/normalize.d.ts",
+      "import": "./dist/normalize.js"
+    },
+    "./compare": {
+      "types": "./dist/compare.d.ts",
+      "import": "./dist/compare.js"
+    },
+    "./fetch": {
+      "types": "./dist/fetch.d.ts",
+      "import": "./dist/fetch.js"
+    },
+    "./report": {
+      "types": "./dist/report.d.ts",
+      "import": "./dist/report.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "sitemap-diff": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "PUBLISHING.md",
+    "THIRD_PARTY_NOTICES.md",
+    "examples/",
+    "docs/"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test",
+    "build": "tsc",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run typecheck && npm run lint && npm run build && npm test"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "sitemap",
+    "seo",
+    "diff",
+    "xml",
+    "sitemap-index"
+  ],
+  "dependencies": {
+    "saxes": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^10.13.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.0.0"
+  }
+}
+

@@ -1,0 +1,29 @@
+name: Invoice Rules
+on:
+  push:
+    paths: ['invoice-rules/**', '.github/workflows/invoice-rules.yml']
+  pull_request:
+    paths: ['invoice-rules/**', '.github/workflows/invoice-rules.yml']
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    defaults:
+      run:
+        working-directory: invoice-rules
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '${{ matrix.node }}'
+          cache: npm
+          cache-dependency-path: invoice-rules/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm audit --audit-level=low
+      - run: npm pack --dry-run --ignore-scripts
+      - run: npm run check:consumer

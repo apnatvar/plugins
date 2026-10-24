@@ -1,0 +1,17 @@
+PPDF (Privacy PDF) gives you practical PDF tools that run on your device in Chrome. Choose a file, select a tool, review the result, and save it when you are ready. PPDF requests no Chrome permissions and does not upload your documents.
+
+Use PPDF to:
+- Compress PDFs with High, Balanced, or Smallest image settings.
+- Merge PDFs, split them by page ranges, extract or delete pages, reorder pages, rotate selected pages, and add page numbers.
+- Create a PDF from JPG and PNG images, with one image on each page.
+
+Compression targets supported JPEG image streams in 8-bit DeviceRGB. It re-encodes eligible images in a local worker while keeping text and vector artwork as PDF content. Unsupported images, masks, or failed conversions keep their original image data. Compression may not reduce every file.
+
+PPDF processes selected PDFs and images locally in browser memory. It does not transmit document contents or related file metadata to Brownsmith Dynamics or another server. It does not collect browsing history, analytics, or account information. A result is downloaded only when you choose Save. Publisher links open their websites only when you choose them.
+
+Encrypted or password-protected PDFs are not supported. Large documents can use substantial memory. Page operations may not preserve document-level features such as forms, bookmarks, attachments, metadata, layers, or digital signatures reliably; editing can invalidate existing signatures. JPG and PNG inputs are limited to 40 megapixels and 100 MB per file.
+
+By [BD] (Brownsmith Dynamics).
+Home: https://plugins.brownsmithdynamics.com/ppdf/
+Support: https://plugins.brownsmithdynamics.com/support/
+Privacy: https://plugins.brownsmithdynamics.com/ppdf/privacy/

@@ -16,7 +16,7 @@
 
 - [x] Create the 512 × 512 logo and the 128 × 128 store icon; configure the manifest icon entries.
 - [x] Prepare two 1280 × 800 screenshots demonstrating the real popup code with labelled example URLs. See `ASSETS.md` for provenance; installed-extension testing remains separate.
-- [ ] Prepare the required 440 × 280 px small promotional tile. The 1400 × 560 px marquee tile and YouTube video are optional; verify current dashboard requirements before upload.
+- [x] Prepare the 440 × 280 px small promotional tile and the 1400 × 560 px marquee tile. See `ASSETS.md` for files and editable sources.
 - [ ] Enter the title, short summary, full description, single-purpose statement, and `activeTab` justification from `CHROME_WEB_STORE_LISTING.md`.
 - [ ] In Privacy practices, disclose local access and processing of the active tab URL accurately; state that the developer receives no user data; complete and affirm the Limited Use certification.
 - [ ] Review distribution, language, category, and any dashboard declarations for accuracy.
@@ -34,8 +34,8 @@
 
 The logo, store icon, two demonstration screenshots, extended description and
 shorter listing description are prepared. The configured subdomain URLs still
-need verification as public pages without sign-in. The small promotional tile,
-installed-extension Chrome testing, and manual store submission remain outstanding.
+need verification as public pages without sign-in. Both promotional tiles are
+prepared. Installed-extension Chrome testing and manual store submission remain outstanding.
 
 ## Official references
 

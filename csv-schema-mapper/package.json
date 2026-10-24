@@ -1,0 +1,72 @@
+{
+  "name": "@brownsmithdynamics/csv-schema-mapper",
+  "version": "0.1.0",
+  "description": "Bounded, local CSV parsing and deterministic schema mapping with validation.",
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Brownsmith Dynamics",
+    "url": "https://brownsmithdynamics.com"
+  },
+  "homepage": "https://github.com/apnatvar/plugins",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apnatvar/plugins.git",
+    "directory": "csv-schema-mapper"
+  },
+  "bugs": "https://github.com/apnatvar/plugins/issues",
+  "engines": {
+    "node": ">=22"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./node": {
+      "types": "./dist/node.d.ts",
+      "import": "./dist/node.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "CONTRIBUTING.md",
+    "PUBLISHING.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src",
+    "build": "tsc",
+    "test": "node --test tests/parser.test.mjs tests/mapping.test.mjs tests/stream-serialize.test.mjs tests/node.test.mjs",
+    "test:security": "node --test tests/security.test.mjs",
+    "check:consumer": "node scripts/check-consumer.mjs"
+  },
+  "keywords": [
+    "csv",
+    "schema",
+    "mapping",
+    "validation",
+    "typescript",
+    "local-first"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^22.18.12",
+    "eslint": "^10.13.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@brownsmithdynamics/consent-record-kit",
+  "version": "0.1.0",
+  "description": "Private-by-default deterministic consent records with SHA-256 integrity and HMAC authentication",
+  "type": "module",
+  "license": "MIT",
+  "author": "Brownsmith Dynamics (https://brownsmithdynamics.com)",
+  "homepage": "https://brownsmithdynamics.com",
+  "repository": {"type": "git", "url": "git+https://github.com/apnatvar/plugins.git", "directory": "consent-record-kit"},
+  "engines": {"node": ">=22"},
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}},
+  "files": ["dist", "README.md", "LICENSE", "SECURITY.md", "CHANGELOG.md", "CONTRIBUTING.md", "PUBLISHING.md", "RELEASE_CHECKLIST.md", "docs", "examples"],
+  "sideEffects": false,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test scripts",
+    "build": "tsc",
+    "test": "node --test test/*.test.mjs",
+    "check:consumer": "node scripts/consumer.mjs"
+  },
+  "publishConfig": {"access": "public", "registry": "https://registry.npmjs.org/"},
+  "devDependencies": {"@types/node": "^22.0.0", "eslint": "^10.13.0", "typescript": "^5.9.3", "typescript-eslint": "^8.0.0"},
+  "keywords": ["consent", "receipt", "hmac", "privacy", "recordkeeping"]
+}

@@ -31,7 +31,7 @@ npm test
 npm run package
 ```
 
-`npm run dev` starts Vite; open `/workspace.html` to work on the UI (the popup's Chrome API requires loading the extension). `build` creates the production extension in `dist/` and validates its Manifest V3 configuration and local executable assets. `check` runs TypeScript checks; `test` runs the Node tests and an offline Chromium extension suite; `package` creates `artifacts/ppdf-0.1.0.zip` from the production build. Build before running tests or packaging. Generated dependencies, builds, browser profiles, and archives are excluded from Git.
+`npm run dev` starts Vite; open `/workspace.html` to work on the UI (the popup's Chrome API requires loading the extension). `build` creates the production extension in `dist/` and validates its Manifest V3 configuration and local executable assets. `check` runs TypeScript checks; `test` runs the Node tests and an offline Chromium extension suite; `package` creates `artifacts/ppdf-1.0.0.zip` from the production build. Build before running tests or packaging. Generated dependencies, builds, browser profiles, and archives are excluded from Git.
 
 The browser portion of `npm test` requires Chromium. Install Playwright's Chromium with `npx playwright install chromium`, or set `PPDF_CHROMIUM` to an existing Chromium executable before running the tests.
 
@@ -47,3 +47,7 @@ See [validation coverage](docs/validation.md), [architecture](docs/architecture.
 ## Scope
 
 Batch compression, OCR, and a full PDF editor are deferred. The current goal is a small, local toolkit with transparent limits and safe fallbacks for content it cannot transform.
+
+## 1.0.0 draft
+
+High Quality retains its previous settings. Balanced reduces supported image data more strongly, while Smallest aggressively downsamples and re-encodes images. Smallest can lose detail in images and scanned text; selectable PDF text and vectors remain intact. The interface and icons use Brownsmith Dynamics company teal. See store-assets/ and release/ for the draft submission kit and its readiness notes.

@@ -1,5 +1,5 @@
 {
-  "name": "ppdf", "version": "0.1.0", "private": true, "type": "module",
+  "name": "ppdf", "version": "1.0.0", "private": true, "type": "module",
   "scripts": {
     "dev": "vite", "check": "tsc --noEmit", "build": "npm run check && vite build && node scripts/prepare.mjs && node scripts/validate-build.mjs",
     "test": "tsx --test tests/*.test.ts && node scripts/browser-test.mjs",

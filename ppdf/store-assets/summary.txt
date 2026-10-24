@@ -1,0 +1,1 @@
+Compress, merge, split and manage PDFs locally in Chrome. Convert JPG/PNG images to PDF. No uploads.

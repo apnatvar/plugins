@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.npm-cache/
+*.tgz
+coverage/
+release-artifacts/
+pack-dry-run.json
+pack-result.json

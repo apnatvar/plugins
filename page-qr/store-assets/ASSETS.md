@@ -5,6 +5,8 @@
   captured after clicking the real popup's Download PNG control.
 - `logo-128.png`: 128 × 128 store logo with alpha; editable master at `../icons/page-qr.svg`.
 - `logo-512.png`: retained larger source export.
+- `marquee-1400x560.png`: 1400 × 560 marquee promotional tile.
+- `small-promo-440x280.png`: 440 × 280 small promotional tile.
 - `../icons/icon-128.png`: 128 × 128 store/manifest icon, including transparent padding.
 - `DESCRIPTION_3000_WORDS.md`: exactly 3,000 whitespace-separated words, including
   headings and URL references.
@@ -33,6 +35,14 @@ finder motif. It is a decorative brand mark rather than a functional QR code.
 No image-generation model was used. Run `node scripts/generate-icons.cjs` with
 `sharp` available through normal Node resolution, `NODE_PATH`, or `SHARP_MODULE`.
 The 128px icon has 96px artwork and 16px transparent margins on each side.
+
+## Promotional tiles
+
+Both tiles use the existing Page QR vector logo and Brownsmith Dynamics colors.
+Editable SVG canvases are in `promo-source/`. Reproduce the PNGs with
+`node scripts/generate-promos.cjs` and `sharp` available through normal Node
+resolution, `NODE_PATH`, or `SHARP_MODULE`. These are marketing images, not
+functional QR codes or screenshots of the extension.
 
 ## Store links
 

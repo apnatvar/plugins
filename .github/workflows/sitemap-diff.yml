@@ -1,0 +1,38 @@
+name: Sitemap Diff CI
+on:
+  push:
+    paths: ['sitemap-diff/**', '.github/workflows/sitemap-diff.yml']
+  pull_request:
+    paths: ['sitemap-diff/**', '.github/workflows/sitemap-diff.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node: [22, 24]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: sitemap-diff
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+          cache-dependency-path: sitemap-diff/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm audit --audit-level=low
+      - run: npm pack --dry-run
+      - name: Install and exercise package tarball
+        shell: bash
+        run: |
+          npm pack --json > pack-result.json
+          node test/package-smoke.mjs "$(node -e "const fs=require('node:fs'); process.stdout.write(JSON.parse(fs.readFileSync('pack-result.json','utf8'))[0].filename)")"

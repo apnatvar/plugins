@@ -1,0 +1,30 @@
+{
+  "name": "@brownsmithdynamics/invoice-rules",
+  "version": "0.1.0",
+  "description": "Offline invoice schema, decimal arithmetic and configurable India GST checks by Brownsmith Dynamics",
+  "type": "module",
+  "license": "MIT",
+  "author": "Brownsmith Dynamics (https://brownsmithdynamics.com)",
+  "repository": { "type": "git", "url": "git+https://github.com/apnatvar/plugins.git", "directory": "invoice-rules" },
+  "bugs": { "url": "https://github.com/apnatvar/plugins/issues" },
+  "engines": { "node": ">=22" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./india": { "types": "./dist/india.d.ts", "import": "./dist/india.js" },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist/", "examples/", "README.md", "LICENSE", "SECURITY.md", "CHANGELOG.md", "CONTRIBUTING.md", "PUBLISHING.md", "THIRD_PARTY_NOTICES.md"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm run typecheck && npm run build && npm test",
+    "check:consumer": "node scripts/check-consumer.mjs"
+  },
+  "publishConfig": { "access": "public", "registry": "https://registry.npmjs.org/" },
+  "keywords": ["invoice", "validation", "gstin", "gst", "decimal", "offline", "typescript"],
+  "devDependencies": { "typescript": "5.9.3" }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "DEMO-IN-001",
+  "date": "2026-10-24",
+  "currency": "INR",
+  "supplier": {
+    "name": "Example Supplier",
+    "country": "IN",
+    "stateCode": "29"
+  },
+  "customer": {
+    "name": "Example Customer",
+    "country": "IN",
+    "stateCode": "29"
+  },
+  "items": [
+    {
+      "description": "Illustrative service",
+      "quantity": "1",
+      "unitPrice": "100.00",
+      "netAmount": "100.00",
+      "hsn": "DEMO-SAC",
+      "taxes": [
+        { "code": "CGST", "rate": "9", "amount": "9.00" },
+        { "code": "SGST", "rate": "9", "amount": "9.00" }
+      ],
+      "total": "118.00"
+    }
+  ],
+  "totals": {
+    "subtotal": "100.00",
+    "tax": "18.00",
+    "total": "118.00"
+  },
+  "india": {
+    "placeOfSupply": "29",
+    "reverseCharge": false,
+    "supplyType": "intra"
+  }
+}

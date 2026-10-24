@@ -1,0 +1,29 @@
+{
+  "name": "@brownsmithdynamics/business-hours",
+  "version": "0.1.0",
+  "description": "Bounded, time-zone-aware business operating hours with explicit DST and calendar overrides.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Brownsmith Dynamics <contact@brownsmithdynamics.com> (https://brownsmithdynamics.com)",
+  "homepage": "https://github.com/apnatvar/plugins",
+  "repository": {"type": "git", "url": "git+https://github.com/apnatvar/plugins.git", "directory": "business-hours"},
+  "bugs": {"url": "https://github.com/apnatvar/plugins/issues"},
+  "engines": {"node": ">=22"},
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {".": {"types": "./dist/index.d.ts", "import": "./dist/index.js"}, "./package.json": "./package.json"},
+  "files": ["dist", "README.md", "LICENSE", "SECURITY.md", "CHANGELOG.md", "CONTRIBUTING.md", "PUBLISHING.md", "THIRD_PARTY_NOTICES.md"],
+  "publishConfig": {"access": "public", "registry": "https://registry.npmjs.org/"},
+  "keywords": ["business-hours", "opening-hours", "timezone", "dst", "scheduling", "typescript"],
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src test scripts",
+    "test": "node --test test/*.test.mjs",
+    "check:consumer": "node scripts/check-consumer.mjs",
+    "check": "npm run typecheck && npm run lint && npm run build && npm test"
+  },
+  "dependencies": {"@js-temporal/polyfill": "0.5.1"},
+  "devDependencies": {"@eslint/js": "^10.0.1", "eslint": "^10.13.0", "typescript": "^5.9.3", "typescript-eslint": "^8.46.2"}
+}

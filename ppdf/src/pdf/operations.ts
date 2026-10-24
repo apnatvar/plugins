@@ -109,7 +109,9 @@ export async function compressPdfImages(
   encoder: PdfImageEncoder = encodeJpegInBrowser,
   warningSink: string[] = [],
 ): Promise<number> {
-  const settings = preset === 'high' ? { quality: 0.84, maxDimension: 3600 } : preset === 'smallest' ? { quality: 0.52, maxDimension: 1500 } : { quality: 0.68, maxDimension: 2400 };
+  // Keep High Quality stable. Balanced reduces images more moderately;
+  // Smallest deliberately trades image detail for a much smaller output.
+  const settings = preset === 'high' ? { quality: 0.84, maxDimension: 3600 } : preset === 'smallest' ? { quality: 0.28, maxDimension: 1000 } : { quality: 0.58, maxDimension: 2000 };
   let changed = 0;
   for (const [ref, object] of document.context.enumerateIndirectObjects()) {
     if (!(object instanceof PDFRawStream) || getFilter(object) !== 'DCTDecode') continue;

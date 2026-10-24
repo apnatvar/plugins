@@ -1,0 +1,24 @@
+export function invoice(overrides = {}) {
+  return {
+    id: 'INV-2026-001',
+    date: '2026-10-24',
+    dueDate: '2026-11-23',
+    currency: 'USD',
+    supplier: { name: 'Northwind Services', identifier: 'SUP-001', country: 'US' },
+    customer: { name: 'Contoso Ltd', identifier: 'CUS-002', country: 'US' },
+    items: [{
+      description: 'Consulting',
+      quantity: '2',
+      unitPrice: '10.00',
+      netAmount: '20.00',
+      taxes: [{ code: 'VAT', rate: '10', amount: '2.00' }],
+      total: '22.00',
+    }],
+    totals: { subtotal: '20.00', discount: '0.00', tax: '2.00', total: '22.00', rounding: '0.00' },
+    ...overrides,
+  };
+}
+
+export function codes(result) {
+  return result.issues.map((issue) => issue.code);
+}
