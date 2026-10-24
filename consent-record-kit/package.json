@@ -21,6 +21,6 @@
     "check:consumer": "node scripts/consumer.mjs"
   },
   "publishConfig": {"access": "public", "registry": "https://registry.npmjs.org/"},
-  "devDependencies": {"@types/node": "^22.0.0", "eslint": "^10.13.0", "typescript": "^5.9.3", "typescript-eslint": "^8.0.0"},
+  "devDependencies": {"@types/node": "^22.0.0", "eslint": "^10.13.0", "typescript": "^7.0.2", "typescript-eslint": "^8.0.0"},
   "keywords": ["consent", "receipt", "hmac", "privacy", "recordkeeping"]
 }
