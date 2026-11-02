@@ -1,6 +1,6 @@
 {
   "name": "@brownsmithdynamics/csv-schema-mapper",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Bounded, local CSV parsing and deterministic schema mapping with validation.",
   "type": "module",
   "license": "MIT",

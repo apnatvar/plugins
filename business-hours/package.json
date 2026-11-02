@@ -1,6 +1,6 @@
 {
   "name": "@brownsmithdynamics/business-hours",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Bounded, time-zone-aware business operating hours with explicit DST and calendar overrides.",
   "type": "module",
   "license": "MIT",

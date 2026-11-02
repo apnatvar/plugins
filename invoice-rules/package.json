@@ -1,6 +1,6 @@
 {
   "name": "@brownsmithdynamics/invoice-rules",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Offline invoice schema, decimal arithmetic and configurable India GST checks by Brownsmith Dynamics",
   "type": "module",
   "license": "MIT",
