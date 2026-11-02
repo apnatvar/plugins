@@ -2,13 +2,13 @@
 
 Map CSV records into validated JavaScript objects using a small, explicit schema. The package provides a dependency-free parser and serializer, header suggestions, row and stream mapping, and Node.js file helpers.
 
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE) [![CI](https://img.shields.io/badge/CI-pending%20first%20pushed%20run-lightgrey.svg)](https://github.com/apnatvar/plugins)
+[![npm version](https://img.shields.io/npm/v/%40brownsmithdynamics%2Fcsv-schema-mapper)](https://www.npmjs.com/package/@brownsmithdynamics/csv-schema-mapper) [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-The package name is `@brownsmithdynamics/csv-schema-mapper`; the owner confirmed this spelling. The package is unpublished, and npm user `apnatva`'s organization membership and publishing permissions still need owner verification. See [PUBLISHING.md](PUBLISHING.md) before release. This repository is part of [apnatvar/plugins](https://github.com/apnatvar/plugins), maintained by [Brownsmith Dynamics](https://brownsmithdynamics.com).
+Published on [npm](https://www.npmjs.com/package/@brownsmithdynamics/csv-schema-mapper) as `@brownsmithdynamics/csv-schema-mapper`.
 
 ## Install
 
-Once the first public release is available, install it with:
+Install the package from npm:
 
 ```sh
 npm install @brownsmithdynamics/csv-schema-mapper
@@ -90,7 +90,7 @@ const mapper = createMapper(schema, {
 });
 ```
 
-The complete option and result contracts are documented in [docs/API.md](docs/API.md). See [performance and memory](docs/PERFORMANCE.md) for processing bounds and streaming tradeoffs.
+The complete option and result contracts are documented in [docs/API.md](https://github.com/apnatvar/plugins/blob/main/csv-schema-mapper/docs/API.md). See [performance and memory](https://github.com/apnatvar/plugins/blob/main/csv-schema-mapper/docs/PERFORMANCE.md) for processing bounds and streaming tradeoffs.
 
 ## Streaming
 
@@ -122,7 +122,7 @@ For files in Node.js, use `mapFile(path, schema, options)` to map a file into a 
 
 ## Security and data handling
 
-Treat CSV data as untrusted input. Configure parser limits for the expected file size and reject unknown or duplicate headers where appropriate. The parser does not execute formulas, and transforms are caller-supplied code; avoid applying untrusted transforms. CSV serialization quotes cells as required by CSV syntax and prefixes formula-looking values by default. Review [SECURITY.md](SECURITY.md) before exporting untrusted data to spreadsheet software.
+Treat CSV data as untrusted input. Configure parser limits for the expected file size and reject unknown or duplicate headers where appropriate. The parser does not execute formulas, and transforms are caller-supplied code; avoid applying untrusted transforms. CSV serialization quotes cells as required by CSV syntax and prefixes formula-looking values by default. Review exported values in the destination spreadsheet application, since formula handling varies.
 
 ## Handle errors and export
 
@@ -141,9 +141,9 @@ console.log(exported); // "amount\r\n12.5"
 
 Every rejected row has diagnostics. A terminal `MAX_ERRORS` means processing stopped at the configured error budget; it replaces the final retained diagnostic. Reject an entire application import if `errors.length > 0` when partial acceptance is inappropriate. Streams can emit successful earlier rows before a later error, so stage them when transactional behavior is needed. Schema and mapping configuration errors throw; catch them separately from returned CSV data errors. Dates in `format:'iso'` are `Date` instances, while `date-only` produces `YYYY-MM-DD` strings. Custom transforms replace conversion and must return the declared type.
 
-## Development
+## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for local development and release guidance. The package uses Node's built-in test runner; tests are in `tests/`.
+See [CONTRIBUTING.md](https://github.com/apnatvar/plugins/blob/main/csv-schema-mapper/CONTRIBUTING.md) for contribution guidance.
 
 ## License
 

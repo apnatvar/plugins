@@ -1,20 +1,20 @@
 # Consent Record Kit
 
+[![npm version](https://img.shields.io/npm/v/@brownsmithdynamics/consent-record-kit)](https://www.npmjs.com/package/@brownsmithdynamics/consent-record-kit)
+
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)
 
 A free, privacy-first TypeScript library by [Brownsmith Dynamics](https://brownsmithdynamics.com) for constructing, serializing, hashing, authenticating, and validating technical records of consent. Node.js 22+, ESM, MIT, zero runtime dependencies. No network calls, telemetry, IP addresses, user agents, database, or automatic persistence.
 
 **An authenticated record does not independently establish user identity, informed or freely given consent, or regulatory compliance.** This is not a banner, consent management platform, trusted timestamp service, or legal certification. SHA-256 alone is not authentication: anyone can edit a record and compute a new digest.
 
-## Installation and release status
+## Installation
 
-Version 0.1.0 is implemented locally and **not published**. The owner confirmed `@brownsmithdynamics/consent-record-kit` after public metadata verified that organization endpoint and the original misspelled scope returned 404. Publishing permission for npm user `apnatva` still needs verification before release. There is no verified live npm listing to link to. Once published under the confirmed name:
+Published on npm as [`@brownsmithdynamics/consent-record-kit`](https://www.npmjs.com/package/@brownsmithdynamics/consent-record-kit) and ready to install:
 
 ```sh
 npm install @brownsmithdynamics/consent-record-kit
 ```
-
-Until then, build with `npm ci --ignore-scripts && npm run build`, run `npm pack --ignore-scripts`, and install the local tarball in a consumer. The [repository root](https://github.com/apnatvar/plugins) is verified; these local changes have not been pushed. Only the MIT badge above describes an established fact. Build/test badges cannot honestly show a passing remote CI run before the workflow is pushed; an npm version badge cannot honestly show an unpublished version. Add those badges only after verifying the live workflow and registry listing. See [PUBLISHING.md](PUBLISHING.md).
 
 ## Create and verify a receipt
 
@@ -58,7 +58,7 @@ Schema `1.0` contains `schemaVersion`, `type`, `id`, `timestamp`, `subject`, `po
 - Canonical serialization sorts object keys and purpose IDs by JavaScript UTF-16 code-unit order, uses JSON string escaping, preserves Unicode spelling, and contains no whitespace. UTF-8 bytes of this text are hashed. These rules are specific to schema 1.0, not a claim of general RFC 8785 compatibility.
 - `parseReceipt` accepts **only this exact canonical JSON spelling**. Whitespace, alternate property order, escapes, duplicate keys, and unsorted purposes are rejected. Use `canonicalize` for already-parsed trusted plain objects. This restriction avoids cross-parser ambiguity. Maximum input is 65,536 UTF-8 bytes; callers may lower that limit.
 
-For fixed values, byte-for-byte output is deterministic across supported runtimes. Defaults intentionally introduce time and randomness, so supply both when reproducing a record. See [canonical vector](docs/CANONICALIZATION.md).
+For fixed values, byte-for-byte output is deterministic across supported runtimes. Defaults intentionally introduce time and randomness, so supply both when reproducing a record. See [canonical vector](https://github.com/apnatvar/plugins/blob/main/consent-record-kit/docs/CANONICALIZATION.md).
 
 ## Withdrawal and supersession
 
@@ -108,10 +108,10 @@ Generate random secrets of at least 32 bytes using a platform CSPRNG. Keep them 
 
 Opaque identifiers may still be personal data when linkable. Pseudonymization is not anonymization. Choose purpose and policy labels that disclose no unnecessary information. The library collects and transmits nothing; integrating applications control collection, encryption at rest, access control, retention, exports, erasure, backups, consent UI, and data-subject rights. Do not put keys in exported receipts. A withdrawal is an event, not a deletion mechanism.
 
-`StorageAdapter` is a TypeScript-only interface: `insert(receiptOrEnvelope)` returns a promise of `'inserted' | 'duplicate'`; `get(id)` returns a promise of an optional record/envelope. Implement atomic unique insertion. No adapter is bundled or invoked automatically. Real storage also needs authorization, concurrency control, idempotency, authenticated history and encryption. See [integration example](examples/server.mjs).
+`StorageAdapter` is a TypeScript-only interface: `insert(receiptOrEnvelope)` returns a promise of `'inserted' | 'duplicate'`; `get(id)` returns a promise of an optional record/envelope. Implement atomic unique insertion. No adapter is bundled or invoked automatically. Real storage also needs authorization, concurrency control, idempotency, authenticated history and encryption. See [integration example](https://github.com/apnatvar/plugins/blob/main/consent-record-kit/examples/server.mjs).
 
-No separate end-user collection policy is triggered solely by this pure library's behavior, since it has no telemetry or hosted service. Its privacy statement is above. The documentation website and support channels require their own assessment of hosting logs, cookies, analytics, inquiries and applicable transparency obligations. See [publication and legal findings](PUBLISHING.md), [security policy](SECURITY.md), and [assessment](docs/SECURITY_ASSESSMENT.md).
+Report vulnerabilities using the [security policy](https://github.com/apnatvar/plugins/blob/main/consent-record-kit/SECURITY.md).
 
 ## Development
 
-Complete source, tests and docs before checks. Then run `npm run typecheck`, `npm run lint`, `npm run build`, `npm test`, `npm audit --audit-level=low`, `npm pack --dry-run --ignore-scripts`, and `npm run check:consumer`. CI performs these checks with read-only repository permissions and has no publish job or npm secrets. Publication is manual, with 2FA, after the [release checklist](RELEASE_CHECKLIST.md). See [CONTRIBUTING.md](CONTRIBUTING.md) and [CHANGELOG.md](CHANGELOG.md).
+See [CONTRIBUTING.md](https://github.com/apnatvar/plugins/blob/main/consent-record-kit/CONTRIBUTING.md) for development setup and checks, and [CHANGELOG.md](https://github.com/apnatvar/plugins/blob/main/consent-record-kit/CHANGELOG.md) for release history.

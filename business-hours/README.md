@@ -1,27 +1,21 @@
 # Business Hours Engine
 
 [![CI](https://github.com/apnatvar/plugins/actions/workflows/ci.yml/badge.svg)](https://github.com/apnatvar/plugins/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/npm/v/%40brownsmithdynamics%2Fbusiness-hours)](https://www.npmjs.com/org/brownsmithdynamics)
+[![npm](https://img.shields.io/npm/v/%40brownsmithdynamics%2Fbusiness-hours)](https://www.npmjs.com/package/@brownsmithdynamics/business-hours)
 
-A TypeScript operating-hours library from [Brownsmith Dynamics](https://brownsmithdynamics.com).
+A TypeScript operating-hours library from [Brownsmith Dynamics](https://brownsmithdynamics.com), published on [npm](https://www.npmjs.com/package/@brownsmithdynamics/business-hours) as `@brownsmithdynamics/business-hours`.
 Weekly periods, overnight shifts, civil-date overrides, and IANA time zones. MIT licensed.
-
-**Release state:** prepared locally, unpublished. The npm badge will resolve after publication;
-its target is the owner-confirmed organization `brownsmithdynamics`. Organization
-membership and publishing permission still require verification. The repository link above is verified; this new
-subdirectory and workflow must be committed and pushed before source and CI are public.
 
 ## Installation
 
-After manual publication:
+Install the package from npm:
 
 ```sh
 npm install @brownsmithdynamics/business-hours
 ```
 
 Requires Node.js 22+ with full Intl/IANA time-zone support. ESM and TypeScript declarations
-are provided; CommonJS is not supported. For an unpublished checkout use `npm ci`,
-`npm run build`, then `npm pack` and install the resulting tarball.
+are provided; CommonJS is not supported.
 
 ## Quick start: fictional shop
 
@@ -222,16 +216,6 @@ rather than a full booking platform; Temporal and its integer arithmetic depende
 are the only runtime dependencies. Browser bundlers can consume ESM with compatible Intl,
 but the supported validation matrix is Node.js 22 and 24.
 
-## Development
+## Contributing
 
-```sh
-npm ci --ignore-scripts
-npm run check
-npm audit --audit-level=low
-npm run check:consumer
-```
-
-The consumer check packs, inspects, installs and exercises the actual tarball in a clean
-temporary project. Tests use fixed instants and explicit zones, including New York,
-London, Kolkata, Lord Howe and Apia. CI is validation only, with no publish credentials.
-See [PUBLISHING.md](PUBLISHING.md), [SECURITY.md](SECURITY.md), and [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](https://github.com/apnatvar/plugins/blob/main/business-hours/CONTRIBUTING.md) for contribution guidance.

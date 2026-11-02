@@ -1,5 +1,7 @@
 # Invoice Rules
 
+[![npm version](https://img.shields.io/npm/v/@brownsmithdynamics/invoice-rules)](https://www.npmjs.com/package/@brownsmithdynamics/invoice-rules)
+
 ![MIT license](https://img.shields.io/badge/license-MIT-blue) ![Node.js 22 or newer](https://img.shields.io/badge/node-%3E%3D22-green)
 
 Invoice Rules validates invoice-shaped JavaScript values with deterministic decimal arithmetic. It is a library for checking data before a later application step; it does not issue invoices, calculate legally applicable tax rates, or certify compliance with a country's invoicing rules.
@@ -10,13 +12,11 @@ Node.js 22 or newer is required. The package is distributed as ES modules and in
 
 ## Install
 
-The owner confirmed the package name `@brownsmithdynamics/invoice-rules`. It is not published; npm organization membership and publishing access remain unverified. Install it after publication:
+Published on npm as [`@brownsmithdynamics/invoice-rules`](https://www.npmjs.com/package/@brownsmithdynamics/invoice-rules) and ready to install:
 
 ```sh
 npm install @brownsmithdynamics/invoice-rules
 ```
-
-For local use now, run `npm ci --ignore-scripts`, `npm run build`, and `npm pack --ignore-scripts` in this directory, then install the generated `brownsmithdynamics-invoice-rules-0.1.0.tgz` by its absolute path in a consumer project.
 
 ## Quick start
 
@@ -158,11 +158,11 @@ The optional India module exports `isValidGstinFormat`, `hasValidGstinChecksum`,
 
 ## Examples
 
-See [`examples/basic-invoice.json`](examples/basic-invoice.json) for a complete valid document and [`examples/validate.mjs`](examples/validate.mjs) for a runnable validation example.
+See [`examples/basic-invoice.json`](https://github.com/apnatvar/plugins/blob/main/invoice-rules/examples/basic-invoice.json) for a complete valid document and [`examples/validate.mjs`](https://github.com/apnatvar/plugins/blob/main/invoice-rules/examples/validate.mjs) for a runnable validation example.
 
 ## Security and limitations
 
-See [SECURITY.md](SECURITY.md) for the input threat model and reporting process. Treat validation as one control in an application, not as a security boundary or accounting system. Review any custom rules and regular expressions supplied by your application; poorly designed expressions can consume excessive CPU.
+See [SECURITY.md](https://github.com/apnatvar/plugins/blob/main/invoice-rules/SECURITY.md) for the input threat model and reporting process. Treat validation as one control in an application, not as a security boundary or accounting system. Review any custom rules and regular expressions supplied by your application; poorly designed expressions can consume excessive CPU.
 
 ## License
 
@@ -170,13 +170,13 @@ MIT. See [LICENSE](LICENSE).
 
 ## Maintenance and compatibility
 
-Version 0.1.0 is an unpublished initial API. Follow the changelog for incompatible changes; before 1.0, a minor version may change the API. Adding a country module does not make existing modules comprehensive. Maintainers must recheck authoritative sources and relevant amendments before changing statutory claims or releasing jurisdictional rules. See [PUBLISHING.md](PUBLISHING.md) for dated sources, unsupported cases and the release checklist.
+The published package follows semantic versioning. See the [changelog](https://github.com/apnatvar/plugins/blob/main/invoice-rules/CHANGELOG.md) for release history and API changes. Country modules cover only their documented checks.
 
-Contributions and development commands are in [CONTRIBUTING.md](CONTRIBUTING.md). Report security issues using [SECURITY.md](SECURITY.md). Created by [Brownsmith Dynamics](https://brownsmithdynamics.com). The repository remote configured locally is `https://github.com/apnatvar/plugins.git`; public availability of this uncommitted module has not been verified, so no published package or module-source URL is claimed.
+Contributions and development commands are in [CONTRIBUTING.md](https://github.com/apnatvar/plugins/blob/main/invoice-rules/CONTRIBUTING.md). Report security issues using [SECURITY.md](https://github.com/apnatvar/plugins/blob/main/invoice-rules/SECURITY.md). Created by [Brownsmith Dynamics](https://brownsmithdynamics.com). Browse the [source code](https://github.com/apnatvar/plugins/tree/main/invoice-rules) on GitHub.
 
 ## India GST checks
 
-India GST checks are opt-in custom rules, so use them only for invoices whose context you have established. The library does not determine the legally applicable supply type, tax rate, invoice category, registration obligation, or HSN/SAC digits. It also does not contact the GST Portal. See [PUBLISHING.md](PUBLISHING.md) for source notes, checksum limits, and the scope of these checks.
+India GST checks are opt-in custom rules, so use them only for invoices whose context you have established. The library does not determine the legally applicable supply type, tax rate, invoice category, registration obligation, or HSN/SAC digits. It also does not contact the GST Portal.
 
 The India helpers have different levels of assurance:
 
@@ -220,4 +220,4 @@ const result = validateInvoice(invoice, {
 console.log(result.valid ? 'Invoice passed configured checks.' : result.issues);
 ```
 
-The example uses illustrative rates and amounts, not a recommendation for any supply. The fixture is fictional, intentionally has no GSTIN, and uses `DEMO-SAC` only to illustrate the presence check; it does not claim that identifier is a valid HSN/SAC. It does not enable a GSTIN requirement. Run the example from the repository with `node examples/india.mjs` after building the package with `npm run build`; the source fixture is [examples/india-invoice.json](examples/india-invoice.json).
+The example uses illustrative rates and amounts, not a recommendation for any supply. The fixture is fictional, intentionally has no GSTIN, and uses `DEMO-SAC` only to illustrate the presence check; it does not claim that identifier is a valid HSN/SAC. It does not enable a GSTIN requirement. Run the example from the repository with `node examples/india.mjs` after building the package with `npm run build`; the source fixture is [examples/india-invoice.json](https://github.com/apnatvar/plugins/blob/main/invoice-rules/examples/india-invoice.json).
