@@ -1,6 +1,6 @@
 {
   "name": "@brownsmithdynamics/sitemap-diff",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "Bounded XML sitemap comparison for technical SEO monitoring by Brownsmith Dynamics",
   "type": "module",
   "license": "MIT",
@@ -47,26 +47,22 @@
     "./package.json": "./package.json"
   },
   "bin": {
-    "sitemap-diff": "./dist/cli.js"
+    "sitemap-diff": "dist/cli.js"
   },
   "files": [
-    "dist/",
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
     "README.md",
     "LICENSE",
-    "SECURITY.md",
-    "CHANGELOG.md",
-    "CONTRIBUTING.md",
-    "PUBLISHING.md",
-    "THIRD_PARTY_NOTICES.md",
-    "examples/",
-    "docs/"
+    "THIRD_PARTY_NOTICES.md"
   ],
   "scripts": {
     "typecheck": "tsc --noEmit",
     "lint": "eslint src test",
     "build": "tsc",
     "test": "node --test test/*.test.mjs",
-    "check": "npm run typecheck && npm run lint && npm run build && npm test"
+    "check": "npm run typecheck && npm run lint && npm run build && npm test",
+    "prepack": "npm run build"
   },
   "publishConfig": {
     "access": "public",
@@ -87,6 +83,8 @@
     "eslint": "^10.13.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.0.0"
+  },
+  "overrides": {
+    "minimatch": "11.0.1"
   }
 }
-

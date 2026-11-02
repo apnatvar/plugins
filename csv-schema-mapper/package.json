@@ -1,6 +1,6 @@
 {
   "name": "@brownsmithdynamics/csv-schema-mapper",
-  "version": "0.1.0",
+  "version": "1.0.2",
   "description": "Bounded, local CSV parsing and deterministic schema mapping with validation.",
   "type": "module",
   "license": "MIT",
@@ -33,14 +33,10 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist",
-    "docs",
+    "dist/**/*.js",
+    "dist/**/*.d.ts",
     "README.md",
-    "LICENSE",
-    "SECURITY.md",
-    "CHANGELOG.md",
-    "CONTRIBUTING.md",
-    "PUBLISHING.md"
+    "LICENSE"
   ],
   "publishConfig": {
     "access": "public",
@@ -52,7 +48,8 @@
     "build": "tsc",
     "test": "node --test tests/parser.test.mjs tests/mapping.test.mjs tests/stream-serialize.test.mjs tests/node.test.mjs",
     "test:security": "node --test tests/security.test.mjs",
-    "check:consumer": "node scripts/check-consumer.mjs"
+    "check:consumer": "node scripts/check-consumer.mjs",
+    "prepack": "npm run build"
   },
   "keywords": [
     "csv",
@@ -63,10 +60,13 @@
     "local-first"
   ],
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
+    "@eslint/js": "10.0.1",
     "@types/node": "^22.18.12",
-    "eslint": "^10.13.0",
+    "eslint": "10.13.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "8.72.0"
+  },
+  "overrides": {
+    "minimatch": "11.0.1"
   }
 }

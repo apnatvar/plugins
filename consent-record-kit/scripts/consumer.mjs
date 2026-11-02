@@ -30,11 +30,11 @@ try {
   const packOutput = runNpm(['pack', '--json', '--offline', '--ignore-scripts']);
   const [packed] = JSON.parse(packOutput);
   const { filename } = packed;
+  archive = resolve(root, filename);
   assert.equal(packed.name, packageJson.name);
   const packedPaths = packed.files.map(file => file.path);
-  for (const required of ['dist/index.js', 'dist/index.d.ts', 'README.md', 'LICENSE', 'SECURITY.md', 'PUBLISHING.md']) assert.ok(packedPaths.includes(required), required);
-  for (const name of packedPaths) assert.match(name, /^(?:dist\/[^/]+\.(?:js|d\.ts)|docs\/[^/]+\.md|examples\/[^/]+\.mjs|(?:README|LICENSE|SECURITY|CHANGELOG|CONTRIBUTING|PUBLISHING|RELEASE_CHECKLIST)\.?(?:md)?|package\.json)$/);
-  archive = resolve(root, filename);
+  for (const required of ['dist/index.js', 'dist/index.d.ts', 'README.md', 'LICENSE', 'package.json']) assert.ok(packedPaths.includes(required), required);
+  for (const name of packedPaths) assert.match(name, /^(?:dist\/[^/]+\.(?:js|d\.ts)|README\.md|LICENSE|package\.json)$/);
   const app = join(temp, 'consumer');
   await mkdir(app);
   await writeFile(join(app, 'package.json'), JSON.stringify({ private: true, type: 'module' }));
